@@ -31,7 +31,7 @@ npm start
 #### Utilização:
 Esta API possui três rotas, sendo elas:
 1. **POST** /auth/signup
-Cria um usuário no banco de dados, passando informações como: nome, email, senha e telefone. *Segue um exemplo de chamada abaixo:*
+Cria um usuário no banco de dados, passando informações como: nome, email, senha e um vetor de telefones. *Segue um exemplo de chamada abaixo:*
 ``` 
 curl --location --request POST 'https://testesky-luan.herokuapp.com/auth/signup' \
 --header 'Content-Type: application/json' \
@@ -58,21 +58,12 @@ curl --location --request POST 'https://testesky-luan.herokuapp.com/auth/signin'
 }'
 ```
 
-3. **GET** /user
-Passando o token JWT gerado na chamada 2 no header x-access-token, caso o token ainda esteja válido, retorna todos os usuários (Nome, Email e Id) cadastrados no banco de dados. *Segue um exemplode chamada abaixo*
+3. **GET** /user/96e8f9f1-d8d4-4266-9286-bad08044980c
+Passando o token JWT gerado na chamada 2 no header x-access-token e o Id do usuário como parâmetro na rota, caso o token ainda esteja válido, retorna o usuário (Nome, Email e Id) referente ao Id informado. *Segue um exemplo de chamada abaixo*
 
 ```
-curl --location --request GET 'https://testesky-luan.herokuapp.com/user' \
---header 'Authorization: 879452a36d12744a0db4aae7b8e1eb4e7ab259066713b7d3b37c6245b745c74bea2e5760e9808546c15a72b7e0ac849cd653d3e68abaae0f4290f8c1b17fa225a4d6dfd6332d460a4462d3221d99106743f643bb82f53c7566a1787a6609fd343648e37b30eb84626b60f9c53f6923982776d891808a4ebeef70d46113b862b7d42c0d5f4feb6008676d1dd224d12f9bd694f7fbc784d0eca782fc6140fee32af56fada4fed7d2c99735422a851f4fd30fd0d3020e32433bc2b23b8d24d951da' \
---data-raw ''
-```
-
-4. **GET** /user/a526c305-7155-4cf2-b7b8-ef05c7261971
-Passando o token JWT gerado na chamada 2 no header x-access-token e o Id do usuário como parâmetro na rota, caso o token ainda esteja válido, retorna o usuário (Nome, Email e Id) referente ao Id informado. *Segue um exemplode chamada abaixo*
-
-```
-curl --location --request GET 'https://testesky-luan.herokuapp.com/user/a526c305-7155-4cf2-b7b8-ef05c7261971' \
---header 'Authorization: 879452a36d12744a0db4aae7b8e1eb4e7ab259066713b7d3b37c6245b745c74bea2e5760e9808546c15a72b7e0ac849cd653d3e68abaae0f4290f8c1b17fa225a4d6dfd6332d460a4462d3221d99106743f643bb82f53c7566a1787a6609fd343648e37b30eb84626b60f9c53f6923982776d891808a4ebeef70d46113b862b7d42c0d5f4feb6008676d1dd224d12f9bd694f7fbc784d0eca782fc6140fee32af56fada4fed7d2c99735422a851f4fd30fd0d3020e32433bc2b23b8d24d951da' \
+curl --location --request GET 'https://testesky-luan.herokuapp.com/user/96e8f9f1-d8d4-4266-9286-bad08044980c' \
+--header 'Authorization: Bearer 879452a36d12744a0db4aae7b8e1eb4e7ab259066713b7d3b37c6245b745c74bea2e5760e9808546c15a72b7e0ac849c4312af607d776af2e01180bd417c3bbd45b327b81693a87dba6016010e07f7755fb3a43844a633ec5f8465c66aa8acb93cf6309ce36e5b010ca4a2dfabe1f1657b5ae3d1b9a46eb1326d2d5bbebe739915ff043a2b7eb2c93aa74a7fc13edf4cc6780ea8eb601532f74255f06590640367da8989c1aae2dfb3f11af4dafff0e19a418d7db3070d273507075d0855434bee0de463e93ca09a1ac52c361344050b' \
 --data-raw ''
 ```
 
