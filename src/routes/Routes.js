@@ -6,10 +6,11 @@ const authService = require('../services/jwtService');
 
 //user
 router.get('/user/:id', authService.verify, userController.get);
-router.get('/user', authService.verify, userController.getAll);
 
 //auth
 router.post('/auth/signup', authController.signUp);
 router.post('/auth/signin', authController.signIn);
+
+router.use((req, resp) => resp.status(404).json({ error: 'Endpoint não encontrado' }));
 
 module.exports = router;

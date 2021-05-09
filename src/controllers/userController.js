@@ -3,13 +3,14 @@ const userRepository = require('../repositories/userRepository');
 exports.get = async (req, res) => {
     try {
         
-        const id = req.params.id;
-        const user = await userRepository.getById(id);
+        const userId = req.params.id;
+        const user = await userRepository.getById(userId);
 
+        const {id,nome,email} = user;
         res.status(200).json({
-            Id: user.id,
-            nome: user.nome,
-            email: user.email
+            id,
+            nome,
+            email
         });
 
     } catch (error) {

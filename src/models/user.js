@@ -6,7 +6,7 @@ const UsuarioSchema = new mongoose.Schema({
     id: {
         type: String,
         require: true,
-        default: uuidv4()
+        default: uuidv4(),
     },
     token: {
         type: String,
@@ -29,10 +29,10 @@ const UsuarioSchema = new mongoose.Schema({
     },
     telefones: [{
         numero: {
-            type: String
+            type: String,
         },
         ddd: {
-            type: Number
+            type: Number,
         }
     }],
     dataCriado: {

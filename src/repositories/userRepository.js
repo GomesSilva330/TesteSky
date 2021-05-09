@@ -1,14 +1,14 @@
 const Usuario = require('../models/user');
 
-exports.getById = async (id) => {
+exports.getById = async id => {
     return await Usuario.findOne({id});
 };
 
-exports.getByEmail = async (email) => {
+exports.getByEmail = async email => {
     return await Usuario.findOne({email}).select('+senha');
 };
 
-exports.create = async (user) => {
+exports.create = async user => {
     return await Usuario.create(user);
 };
 

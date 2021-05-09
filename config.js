@@ -1,12 +1,12 @@
 const getApplicationData = () => ({
   port: process.env.PORT,
-  baseUrl: process.env.BASE_URL
+  baseUrl: process.env.BASE_URL,
 });
 
 const getSecurityData = () => ({
   CryptoSecretKey: process.env.CRYPTO_PRIVATE_KEY,
   jwtPrivateKey: process.env.JWT_PRIVATE_KEY,
-  jwtExpirationTime: +process.env.JWT_EXPIRATION_TIME
+  jwtExpirationTime: +process.env.JWT_EXPIRATION_TIME,
 });
 
 const getMongoData = () => ({
