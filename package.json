@@ -10,6 +10,9 @@
     "start": "node app.js",
     "startDev": "nodemon app.js"
   },
+  "engines": {
+    "node": "12"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
