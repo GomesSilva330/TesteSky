@@ -1,0 +1,13 @@
+{
+    "application": {
+        "port": 3000,
+        "baseUrl": "https://localhost:3000"
+    },
+    "security": {
+        "CryptoSecretKey": "d22a1b75-1d46-4d82-8928-413dce0fa009",
+        "jwtPrivateKey": "3742797f-f0ec-41d9-8578-2db9a78ed399",
+        "jwtExpirationTime": 1800
+    },
+    "mongo": "MONGO_URI"
+
+}
