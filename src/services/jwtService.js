@@ -1,15 +1,20 @@
 const crypto = require('../services/cryptoService');
-const { security } = require('../../config');
+const {security} = require('../../config');
 const jwt = require('jsonwebtoken');
 
-exports.generateToken = (params = {}) => {
-    const token = jwt.sign({
-        params
-    }, security.jwtPrivateKey, {
-        expiresIn: security.jwtExpirationTime
-    });
+exports.generateToken = (params = {}, chaves = security) => {
+    try {
+        const token = jwt.sign({
+            params
+        }, chaves.jwtPrivateKey, {
+            expiresIn: chaves.jwtExpirationTime
+        });
 
-    return crypto.encrypt(token);
+        return crypto.encrypt(token, chaves.CryptoSecretKey);
+    } catch (error) {
+        console.log(error.message);
+        return null;
+    }
 };
 
 exports.verify = (req, res, next) => {
@@ -20,7 +25,7 @@ exports.verify = (req, res, next) => {
             message: 'Não autorizado'
         });
 
-    const token = crypto.decrypt(authHeader);
+    const token = crypto.decrypt(authHeader, security.CryptoSecretKey);
 
     jwt.verify(token, security.jwtPrivateKey, (err, decoded) => {
         if (err) return res.status(401).json({
