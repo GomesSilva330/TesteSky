@@ -1,4 +1,4 @@
-# Customer API for blablabla project
+# User API for Sky Test
 
 #### Instalação/Configuração
 * Para instalar essa aplicação em sua máquina, rode o comando abaixo:
