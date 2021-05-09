@@ -1,0 +1,31 @@
+[{
+    "id": "2e544dec-de54-42a0-aa96-0b3a3dc22472",
+    "nome": "Damon Rolfson",
+    "email": "Arlie90@yahoo.com",
+    "senha": "56399",
+    "telefones": [{
+        "telefone": "860-836-4940 x6726",
+        "ddd": 11
+    }],
+    "token": ""
+}, {
+    "id": "0c8912e7-6018-4307-81d6-ed83df6337f0",
+    "nome": "Tiffany Pfannerstill V",
+    "email": "Jamil.Monahan38@hotmail.com",
+    "senha": "f2104",
+    "telefones": [{
+        "telefone": "1-281-399-7060 x34032",
+        "ddd": 11
+    }],
+    "token": ""
+}, {
+    "id": "a76e14ea-a517-41c9-9e1b-39f06d088483",
+    "nome": "Nina Ullrich",
+    "email": "Kayli_Hettinger55@hotmail.com",
+    "senha": "2861c",
+    "telefones": [{
+        "telefone": "(580) 342-5384 x932",
+        "ddd": 11
+    }],
+    "token": ""
+}]
